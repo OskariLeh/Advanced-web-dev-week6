@@ -30,14 +30,14 @@ interface Plane extends Vehicle {
 let vehicles: Array<Vehicle> = []
 
 app.get("/hello", (req: Request, res: Response) => {
-    res.send({"msg": "Hello world"})
+    res.send("Hello world")
 })
 
 app.post("/vehicle/add", (req: Request, res: Response) => {
     let newVehicle: Vehicle = req.body
     vehicles.push(newVehicle)
     res.status(201)
-    res.send({"msg": "Vehicle Added"})
+    res.send("Vehicle added")
 })
 
 app.get("/vehicle/search/:model", (req: Request, res: Response) => {

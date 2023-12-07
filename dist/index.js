@@ -12,13 +12,13 @@ app.use(express_1.default.urlencoded({ extended: false }));
 app.use(express_1.default.static(path_1.default.join(path_1.default.dirname(__dirname), 'public')));
 let vehicles = [];
 app.get("/hello", (req, res) => {
-    res.send({ "msg": "Hello world" });
+    res.send("Hello world");
 });
 app.post("/vehicle/add", (req, res) => {
     let newVehicle = req.body;
     vehicles.push(newVehicle);
     res.status(201);
-    res.send({ "msg": "Vehicle Added" });
+    res.send("Vehicle added");
 });
 app.get("/vehicle/search/:model", (req, res) => {
     let model = req.params.model;
